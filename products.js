@@ -103,35 +103,35 @@ function buyProduct(productName) {
     // product by name
     let product;
     switch(productName.toLowerCase()) {
-        case "KitKat":
+        case "kitkat":
             product = product_1;
             break;
-        case "Street Tub 220g":
+        case "street tub 220g":
             product = product_2;
             break;
-        case "Street Tub 600g":
+        case "street tub 600g":
             product = product_3;
             break;
         case "maltesers":
             product = product_4;
             break;
-        case "Welch mixed":
+        case "welch mixed":
             product = product_5;
             break;
-        case "Weathers butter":
+        case "weathers butter":
             product = product_6;
             break;
         case "twix":
             product = product_7;
             break;
-        case "TicTac":
+        case "tictac":
             product = product_8;
             break;
         case "toblerone":
             product = product_9;
             break;
         default:
-            console.error("Product not found!");
+            console.error("Product not found:", productName);
             return;
     }
 
