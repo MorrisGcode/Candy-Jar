@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'outfit';
+            background:linear-gradient(#ffdad5,#fff7f9);
+        }
+        .contact-container{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+        }
+        .contact-left{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+        .contact-left-title h2{
+            font-weight: 600;
+            color: #a363aa;
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+        .contact-left-title hr{
+            width: 120px;
+            height: 5px;
+            background-color: #a363aa;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .contact-input{
+            width: 400px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+            padding-left: 25px;
+            font-weight: 500;
+            color: #666;
+            outline: none;
+        }
+        .contact-left textarea{
+            height: 140px;
+            padding-top: 15px;
+            border-radius: 20px;
+        }
+        .contact-input:focus{
+            border: 2px solid #ff994f;
+        }
+        .contact-left button{
+            display: flex;
+            align-items: center;
+            border: none;
+            border-radius: 50px;
+            gap: 10px;
+            background:linear-gradient(270deg, #ff994f, #fa6d86);
+            color: #fff;
+            cursor: pointer;
+            padding: 15px 30px;
+        }
+        .contact-input::placeholder{
+            color: #a9a9a9;
+        }
+        .contact-left button img{
+            height: 15px;
+        }
+        .contact-right img{
+            width: 500px;
+        }
+        @media screen and (max-width: 800px){
+            .contact-input{
+                width:80dvw ;
+            }
+            .contact-right{
+                display: none;
+            }
+            
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr> 
+            </div>
+            <input type="hidden" name="access_key" value="e32f170b-e9df-4d3c-bfef-271411559f21">
+            <input type="text" name="name" placeholder=" Your Name" class="contact-input" required>
+            <input type="email" name="email" placeholder=" Your Email" class="contact-input" required>
+            <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+            <button type="submit">submit <img src="images/arrow_icon.png" alt="submit"></button>
+        </form>
+        <div class="contact-right">
+            <img src="images/right_img.png" alt="">
+        </div>
+    </div>
+    
+</body>
+</html>
