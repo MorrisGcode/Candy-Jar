@@ -240,3 +240,51 @@ form p a{
         height: 200px;
     }
 }
+
+.navbar {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.nav-link {
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: blueviolet;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding: 1rem 0;
+    }
+
+    .navbar-nav {
+        margin-bottom: 1rem;
+    }
+
+    .d-flex.align-items-center {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .btn-info {
+        margin-right: 1rem;
+    }
+}
