@@ -176,7 +176,7 @@ function updateDisplay() {
     container.appendChild(product_9.displayCard());
 }
 
-// Add this function to update cart count
+// function to update cart count
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
     if (cartCount) {
