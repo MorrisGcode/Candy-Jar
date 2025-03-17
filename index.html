@@ -3,17 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Honk&family=Lobster&family=Modak&family=Oleo+Script:wght@400;700&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
-    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Home</title>
   </head>
   <body>
@@ -64,9 +70,11 @@
         <!-- Right elements -->
         <div class="d-flex align-items-center">
           <!-- Icon -->
-          <a href="cart.html" class="btn btn-info"> <i class="fas fa-shopping-cart"></i>(<span id="cartCount">0</span>)</a>
+          <a href="cart.html" class="btn btn-info">
+            <i class="fas fa-shopping-cart"></i>(<span id="cartCount">0</span
+            >)</a
+          >
 
-          
           <!-- Avatar -->
           <div class="dropdown">
             <a
@@ -85,7 +93,6 @@
                 loading="lazy"
               />
             </a>
-           
           </div>
         </div>
         <!-- Right elements -->
@@ -93,153 +100,177 @@
       <!-- Container wrapper -->
     </nav>
     <div class="container home">
-        <div class="row">
-          <div class="col-sm hometext">
-            <h2>Enjoy Your <br> <span style="color: blueviolet;">Every bite</span></h2>
-            <p>Sometimes all you need is love...Oh. Wait! And <span style="color: blueviolet;">tasty candy</span> to go along with it, as nowadays love is anything but sweet</p>
-            <a href="products.html"><button type="button" class="btn btn-primary" style="background-color: blueviolet;">Let's explore</button></a>
-          </div>
-          <div class="col-sm">
-            <img src="images/home.png" alt="Candy" class="img-fluid home-image">
-          </div>
+      <div class="row">
+        <div class="col-sm hometext">
+          <h1 style="color: orangered; font-size: 50px;">CANDY JAR</h1>
+          <h2 style="padding-top: 30px">
+            Enjoy Your <br />
+            <span style="color: blueviolet">Every bite</span>
+          </h2>
+          <p>
+            Sometimes all you need is love...Oh. Wait! And
+            <span style="color: blueviolet">tasty candy</span> to go along with
+            it, as nowadays love is anything but sweet
+          </p>
+          <a href="products.html"
+            ><button
+              type="button"
+              class="btn btn-primary"
+              style="background-color: blueviolet"
+            >
+              Let's explore
+            </button></a
+          >
+        </div>
+        <div class="col-sm">
+          <img src="images/home.png" alt="Candy" class="img-fluid home-image" />
         </div>
       </div>
-      <div class="specialties">
-        <h2>Our Specialties</h2>
-        <div class="row">
-          <div class="col-sm">
-            <img src="images/candy1.jpeg" alt="Candy" class="img-fluid">
-            <h3>Candy</h3>
-            <p>Our candy is made from the finest ingredients, and is guaranteed to make you smile</p>
-          </div>
-          <div class="col-sm">
-            <img src="images/chocolate2.jpeg" alt="Chocolate" class="img-fluid">
-            <h3>Chocolate</h3>
-            <p>Our chocolate is made from the finest cocoa beans, and is guaranteed to make you smile</p>
-          </div>
-          <div class="col-sm">
-            <img src="images/icecream.jpeg" alt="Ice Cream" class="img-fluid">
-            <h3>Ice Creams</h3>
-            <p>Our ice creams are made from the finest ingredients, and are guaranteed to make you smile</p>
-          </div>
+    </div>
+    <div class="specialties">
+      <h2>Our Specialties</h2>
+      <div class="row">
+        <div class="col-sm">
+          <img src="images/candy1.jpeg" alt="Candy" class="img-fluid" />
+          <h3>Candy</h3>
+          <p>
+            Our candy is made from the finest ingredients, and is guaranteed to
+            make you smile
+          </p>
+        </div>
+        <div class="col-sm">
+          <img src="images/chocolate2.jpeg" alt="Chocolate" class="img-fluid" />
+          <h3>Chocolate</h3>
+          <p>
+            Our chocolate is made from the finest cocoa beans, and is guaranteed
+            to make you smile
+          </p>
+        </div>
+        <div class="col-sm">
+          <img src="images/icecream.jpeg" alt="Ice Cream" class="img-fluid" />
+          <h3>Ice Creams</h3>
+          <p>
+            Our ice creams are made from the finest ingredients, and are
+            guaranteed to make you smile
+          </p>
         </div>
       </div>
-    
-      <footer class="text-center text-lg-start bg-body-tertiary text-muted footer" >
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-          <!-- Left -->
-          <div class="me-5 d-none d-lg-block">
-            <span>Get connected with us on social networks:</span>
-          </div>
-          <!-- Left -->
-      
-          <!-- Right -->
-          <div>
-            <a href="" class="me-4 text-reset">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <!-- Right -->
-        </section>
-        <!-- Section: Social media -->
-      
-        <!-- Section: Links  -->
-        <section class="">
-          <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <!-- Content -->
-                <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet;">
-                  <i class="fas fa-gem me-3"></i>CANDY JAR
-                </h6>
-                <p>
-                  "We craft sweet moments, one Candy at a time."
-                </p>
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet;">
-                  PRODUCTS
-                </h6>
-                <p>
-                  Candy
-                </p>
-                <p>
-                  Chocolate
-                </p>
-                <p>
-                  Ice Creams
-                </p>
-                
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet;">
-                  Useful links
-                </h6>
-                <p>
-                  <a href="index.html" class="text-reset">Home</a>
-                </p>
-                <p>
-                  <a href="about.html" class="text-reset">About Us</a>
-                </p>
-                <p>
-                  <a href="products.html" class="text-reset">Products</a>
-                </p>
-                
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet;">Contact</h6>
-                <p><i class="fas fa-home me-3"></i> Nairobi, CBD, Kenya</p>
-                <p>
-                  <i class="fas fa-envelope me-3"></i>
-                  info@candyjar.com
-                </p>
-                <p><i class="fas fa-phone me-3"></i> + 254 234 567 88</p>
-                <p><i class="fas fa-print me-3"></i> + 254 234 567 89</p>
-              </div>
-              <!-- Grid column -->
+    </div>
+
+    <footer
+      class="text-center text-lg-start bg-body-tertiary text-muted footer"
+    >
+      <!-- Section: Social media -->
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet">
+                <i class="fas fa-gem me-3"></i>CANDY JAR
+              </h6>
+              <p>"We craft sweet moments, one Candy at a time."</p>
             </div>
-            <!-- Grid row -->
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet">
+                PRODUCTS
+              </h6>
+              <p>Candy</p>
+              <p>Chocolate</p>
+              <p>Ice Creams</p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet">
+                Useful links
+              </h6>
+              <p>
+                <a href="index.html" class="text-reset">Home</a>
+              </p>
+              <p>
+                <a href="about.html" class="text-reset">About Us</a>
+              </p>
+              <p>
+                <a href="products.html" class="text-reset">Products</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4" style="color: blueviolet">
+                Contact
+              </h6>
+              <p><i class="fas fa-home me-3"></i> Nairobi, CBD, Kenya</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                info@candyjar.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> + 254 234 567 88</p>
+              <p><i class="fas fa-print me-3"></i> + 254 234 567 89</p>
+            </div>
+            <!-- Grid column -->
           </div>
-        </section>
-        <!-- Section: Links  -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2025 Copyright:
-          <a class="text-reset fw-bold" href="index.html">candyjar.com</a>
+          <!-- Grid row -->
         </div>
-        <!-- Copyright -->
-      </footer>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2025 Copyright:
+        <a class="text-reset fw-bold" href="index.html">candyjar.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
