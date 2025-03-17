@@ -14,20 +14,20 @@
     <div class="container sign">
         <div class="form-group">
             <div class="form-box">
-            <form>
+            <form id="postData">
                 <h1 id="title">Sign Up</h1>
                 <div class="input-group">
                     <div class="input-field" id="nameField">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Name" id="username">
                     </div>
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" placeholder="Email" id="email" required>
                     </div>
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" id="password"required>
                     </div>
                     <p>lost password <a href="#"> Click here!</a></p>
                 </div>
@@ -43,22 +43,87 @@
 
     <script>
         let signupBtn = document.getElementById('signupBtn');
-        let signinBtn = document.getElementById('signinBtn'); 
+        let signinBtn = document.getElementById('signinBtn');
         let nameField = document.getElementById('nameField');
         let title = document.getElementById('title');
-
-        signinBtn.onclick = function(){
-            nameField.style.maxheight ="0";
+    
+        signinBtn.addEventListener('click', function() {
+            nameField.style.maxheight = "0";
+            nameField.style.overflow = "hidden";
             title.innerHTML = "Sign In";
             signupBtn.classList.add('disable');
             signinBtn.classList.remove('disable');
-        }
-        signupBtn.onclick = function(){
-            nameField.style.maxheight ="60px";
+        });
+    
+        signupBtn.addEventListener('click', function() {
+            nameField.style.maxheight = "60px";
+            nameField.style.overflow = "visible";
             title.innerHTML = "Sign Up";
             signupBtn.classList.remove('disable');
             signinBtn.classList.add('disable');
+        });
+    
+        // save user data to local storage
+        signupBtn.onclick = function() {
+            let name = document.querySelector("#username").value;
+            let email = document.querySelector('#email').value;
+            let password = document.querySelector('#password').value;
+    
+            // Basic validation
+            if (!name || !email || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+    
+            // Password validation (minimum length)
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return;
+            }
+    
+            let user = {
+                name: name,
+                email: email,
+                password: password
+            }
+            localStorage.setItem('user', JSON.stringify(user));
+            alert('User has been saved successfully');
+            window.location.reload(); // Reload the page
         }
+    
+        // sign in
+        signinBtn.onclick = function() {
+            let email = document.querySelector('#email').value;
+            let password = document.querySelector('#password').value;
+    
+            if (!email || !password) {
+                alert('Please enter email and password.');
+                return;
+            }
+    
+            let user = JSON.parse(localStorage.getItem('user'));
+    
+            if (!user) {
+                alert('User not found.');
+                return;
+            }
+    
+            if (email === user.email && password === user.password) {
+                alert('User has been signed in successfully');
+                window.location.href = "index.html";
+            } else {
+                alert('Invalid email or password.');
+            }
+        }
+    
+        // After page reload, switch to signin mode
+        window.addEventListener('load', function() {
+            nameField.style.maxheight = "0";
+            nameField.style.overflow = "hidden";
+            title.innerHTML = "Sign In";
+            signupBtn.classList.add('disable');
+            signinBtn.classList.remove('disable');
+        });
     </script>
 </body>
 </html>

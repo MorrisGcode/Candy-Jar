@@ -135,7 +135,7 @@ function buyProduct(productName) {
             return;
     }
 
-    // Add to cart instead of direct purchase
+    // Add to cart 
     if (product.stock > 0) {
         // Check if item already exists in cart
         const existingItemIndex = cart.findIndex(item => item.name === product.name);
@@ -240,6 +240,14 @@ function updateQuantity(index, change) {
         displayCart();
     }
 }
+// show price per product
+// function showPrice() {
+//     let price = document.getElementById('price').value;
+//     let quantity = document.getElementById('quantity').value;
+//     let total = price * quantity;
+//     document.getElementById('total').innerHTML = total;
+
+
 
 function removeFromCart(index) {
     cart.splice(index, 1);
