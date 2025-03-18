@@ -110,8 +110,14 @@
             }
     
             if (email === user.email && password === user.password) {
-                alert('User has been signed in successfully');
-                window.location.href = "index.html";
+                localStorage.setItem('loggedInUser', JSON.stringify({
+                    name: user.name,
+                    email: user.email
+                }));
+                
+                const redirectUrl = sessionStorage.getItem('redirectUrl') || 'index.html';
+                sessionStorage.removeItem('redirectUrl'); // Clear stored URL
+                window.location.href = redirectUrl;
             } else {
                 alert('Invalid email or password.');
             }

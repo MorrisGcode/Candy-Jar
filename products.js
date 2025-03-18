@@ -180,55 +180,46 @@ function updateDisplay() {
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
     if (cartCount) {
-        cartCount.textContent = cart.length;
+        const count = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCount.textContent = count;
     }
 }
 
 // Modify the displayCart function
 function displayCart() {
-    const cartContainer = document.getElementById('cartItems');
-    if (!cartContainer) return;
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
     
+    if (!cartItems || !cartTotal) return;
+
     // Clear existing items
-    cartContainer.innerHTML = '';
+    cartItems.innerHTML = '';
     
     // Get cart from localStorage
     cart = JSON.parse(localStorage.getItem('cart')) || [];
     
     let total = 0;
 
-    if (cart.length === 0) {
-        cartContainer.innerHTML = '<div class="col-12"><p>Your cart is empty</p></div>';
-        return;
-    }
-
     cart.forEach((item, index) => {
         total += item.price * item.quantity;
-        const cartItem = document.createElement('div');
-        cartItem.className = 'col-12 mb-3';
-        cartItem.innerHTML = `
+        
+        const itemElement = document.createElement('div');
+        itemElement.className = 'col-12 mb-3';
+        itemElement.innerHTML = `
             <div class="card">
                 <div class="card-body d-flex justify-content-between align-items-center">
-                    <img src="${item.image}" style="width: 100px; height: 100px; object-fit: cover;">
-                    <h5 class="card-title">${item.name}</h5>
-                    <p class="card-text">Ksh${item.price}</p>
-                    <div class="quantity-controls">
-                        <button onclick="updateQuantity(${index}, -1)" class="btn btn-sm btn-secondary">-</button>
-                        <span class="mx-2">${item.quantity}</span>
-                        <button onclick="updateQuantity(${index}, 1)" class="btn btn-sm btn-secondary">+</button>
+                    <div>
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">Price: Ksh${item.price} × ${item.quantity}</p>
                     </div>
-                    <button onclick="removeFromCart(${index})" class="btn btn-danger">Remove</button>
+                    <button onclick="removeFromCart(${index})" class="btn btn-danger btn-sm">Remove</button>
                 </div>
             </div>
         `;
-        cartContainer.appendChild(cartItem);
+        cartItems.appendChild(itemElement);
     });
 
-    const totalElement = document.getElementById('cartTotal');
-    if (totalElement) {
-        totalElement.textContent = total.toFixed(2);
-    }
-    
+    cartTotal.textContent = total;
     updateCartCount();
 }
 
@@ -253,7 +244,6 @@ function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
-    updateCartCount();
 }
 
 function checkout() {
@@ -262,4 +252,36 @@ function checkout() {
     localStorage.removeItem('cart');
     displayCart();
     updateCartCount();
+}
+
+function isUserLoggedIn() {
+    return localStorage.getItem('loggedInUser') !== null;
+}
+
+function handleCheckout() {
+    if (!isUserLoggedIn()) {
+        alert('Please sign in to complete checkout');
+        sessionStorage.setItem('redirectUrl', 'cart.html');
+        window.location.href = 'sign.html';
+        return;
+    }
+
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    if (confirm(`Confirm purchase for Ksh${total}?`)) {
+        alert(`Thank you for your purchase, ${loggedInUser.name}!\nTotal: Ksh${total}`);
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        window.location.href = 'index.html';
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem('loggedInUser');
+    localStorage.removeItem('cart');
+    cart = [];
+    updateCartCount();
+    window.location.href = 'index.html';
 }
