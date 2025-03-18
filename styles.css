@@ -243,11 +243,16 @@ form p a{
 
 .navbar {
     padding: 0.5rem 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: none;
+    background: transparent !important;
 }
 
 .navbar-brand img {
     height: 50px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* This helps remove white backgrounds */
+    filter: brightness(1.1); /* Adjust if needed to match your theme */
 }
 
 .nav-link {
@@ -287,4 +292,8 @@ form p a{
     .btn-info {
         margin-right: 1rem;
     }
+}
+
+.bg-body-tertiary {
+    background-color: transparent !important;
 }

@@ -21,6 +21,60 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <title>Home</title>
+    <style>
+      /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Container adjustments */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+}
+
+/* Row adjustments */
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Image responsiveness */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer adjustments */
+.footer {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .col-sm {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    .specialties {
+        padding: 15px;
+    }
+}
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -28,7 +82,7 @@
       <div class="container-fluid">
         <!-- Logo -->
         <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
-          <img src="images/candylogo.png" height="50px" alt="Logo" loading="lazy" />
+          <img src="images/candylogo.png" alt="Candy Jar Logo" loading="lazy" />
         </a>
 
         <!-- Hamburger button -->
